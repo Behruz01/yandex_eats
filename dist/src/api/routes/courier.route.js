@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const isAdmin_middleware_1 = require("../../middleware/isAdmin.middleware");
+const courier_controller_1 = require("./../controller/courier.controller");
+const express_1 = require("express");
+exports.router = (0, express_1.Router)();
+exports.router.post("/courier", isAdmin_middleware_1.isAdmin, courier_controller_1.postCourier);
+exports.router.get("/courier", courier_controller_1.getCourier);
+exports.router.post("/courier/login", courier_controller_1.loginCourier);
+exports.router.delete("/courier/:id", isAdmin_middleware_1.isAdmin, courier_controller_1.deleteCourier);
+exports.router.put("/courier/:id", isAdmin_middleware_1.isAdmin, courier_controller_1.updatedCourier);
+exports.router.get("/courier/:id", courier_controller_1.getOneCourier);
