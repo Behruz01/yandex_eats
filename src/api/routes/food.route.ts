@@ -10,8 +10,8 @@ import { isAdmin } from "../../middleware/isAdmin.middleware";
 
 export const router = Router();
 
-router.post("/post/food", postFoods);
-router.get("/get/food", getFoods);
-router.get("/get/food/:id", getOneFood);
-router.put("/put/food/:id",isAdmin, updateFoods);
-router.delete("/delete/food/:id",isAdmin, deleteFood);
+router.post("/food", postFoods);
+router.get("/food", getFoods);
+router.get("/food/:id", getOneFood);
+router.put("/food/:id",isAdmin, updateFoods);
+router.delete("/food/:id",isAdmin, deleteFood);
